@@ -1,0 +1,17 @@
+name = "StructArrayTables"
+uuid = "ca251ab3-b933-4b3b-914d-871076b2288a"
+version = "0.1.0"
+authors = ["kcarloni <kcarloni@g.harvard.edu>"]
+
+[deps]
+AstroParticleUnits = "7ef70e66-125c-4f32-8552-6b4d78ac8c93"
+StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
+TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
+
+[sources]
+AstroParticleUnits = {url = "https://github.com/kcarloni/AstroParticleUnits.jl.git"}
+
+[compat]
+AstroParticleUnits = "0.1.0"
+StructArrays = "0.7.2"
+TypedTables = "1.4.6"
