@@ -162,10 +162,15 @@ function Base.propertynames(t::StructArray)
     return propertynames(first(sa))
 end
 
-# ── CSV integration ──────────────────────────────────────────────────────
+# ── Tables.jl integration ─────────────────────────────────────────────────
 
-using CSV
+using Tables
 
-function CSV.read(source, ::Type{StructArray}; kwargs...)
-    StructArray(CSV.read(source, TypedTables.Table; kwargs...))
+# Accept any Tables.jl-compatible source (e.g. Tables.CopiedColumns from CSV)
+function StructArray(table)
+    Tables.istable(table) || throw(ArgumentError("Expected a Tables.jl-compatible source"))
+    cols = Tables.columns(table)
+    names = Tables.columnnames(cols)
+    nt = NamedTuple{Tuple(names)}(Tuple(Tables.getcolumn(cols, n) for n in names))
+    StructArray(nt)
 end
