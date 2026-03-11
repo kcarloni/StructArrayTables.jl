@@ -5,6 +5,7 @@ authors = ["kcarloni <kcarloni@g.harvard.edu>"]
 
 [deps]
 AstroParticleUnits = "7ef70e66-125c-4f32-8552-6b4d78ac8c93"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 StructArrays = "09ab397b-f2b6-538f-b94a-2f83cf4a842a"
 TypedTables = "9d95f2ec-7b3d-5a63-8d20-e2491e220bb9"
 

@@ -161,3 +161,11 @@ function Base.propertynames(t::StructArray)
     isempty(sa) && return base
     return propertynames(first(sa))
 end
+
+# ── CSV integration ──────────────────────────────────────────────────────
+
+using CSV
+
+function CSV.read(source, ::Type{StructArray}; kwargs...)
+    StructArray(CSV.read(source, TypedTables.Table; kwargs...))
+end
